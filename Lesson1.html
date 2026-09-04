@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LU1: Fundamentals of Digital Business Strategy - Comprehensive Courseware</title>
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #2563eb;
+      --accent-color: #0d9488;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+      --outcome-bg: #eff6ff;
+      --outcome-border: #bfdbfe;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    /* Learning Outcomes Overview Box */
+    .outcomes-overview {
+      background: var(--outcome-bg);
+      border: 1px solid var(--outcome-border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .outcomes-overview h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .outcomes-overview ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .outcomes-overview li {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .topic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .topic-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .topic-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.35rem;
+    }
+
+    .time-badge {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .topic-outcomes {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 4px solid #9333ea;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .topic-outcomes strong {
+      color: #6b21a8;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .content-section {
+      margin-bottom: 20px;
+    }
+
+    .content-section h3 {
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .break-card {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      text-align: center;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .activity-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .activity-box h4 {
+      margin: 0 0 10px 0;
+      color: #0f766e;
+      font-size: 1.1rem;
+    }
+
+    .activity-box p {
+      margin: 0 0 12px 0;
+    }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    select:focus, textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--primary-color);
+    }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: #15803d;
+      border: 1px solid var(--success-border);
+    }
+
+    .feedback.incorrect {
+      background-color: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #f87171;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>LU1: Fundamentals of Digital Business Strategy</h1>
+    <div class="meta-info">
+      <span>⏱ Delivery Duration: 3 Hours (180 Mins)</span>
+      <span>☕ Break: 15 Mins</span>
+    </div>
+  </header>
+
+  <div class="outcomes-overview">
+    <h2>🎯 Overall Unit Learning Outcomes</h2>
+    <p style="margin-top: 0; margin-bottom: 12px;">Upon successful completion of this learning unit, learners will be able to:</p>
+    <ul>
+      <li><strong>LO1:</strong> Explain the key definitions, evolution, and foundational principles of digital business vs. traditional e-commerce.</li>
+      <li><strong>LO2:</strong> Analyze the core operational and strategic differences between traditional linear business models and digital value networks.</li>
+      <li><strong>LO3:</strong> Identify key market, technological, and customer drivers behind enterprise digital transformation.</li>
+      <li><strong>LO4:</strong> Evaluate methods to align digital initiatives with overarching business goals while managing organizational change and performance ROI.</li>
+    </ul>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">1. Definitions and Evolution of Digital Business</h2>
+      <span class="time-badge">40 Mins (00:00 - 00:40)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 1.1):</strong>
+      Differentiate between basic e-commerce and digital business models, mapping their historical evolution from Web 1.0 to modern AI-driven ecosystems.
+    </div>
+    
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>E-Commerce vs. Digital Business:</strong> Contrast transactional online trading (buying/selling goods online) with holistic digital business transformation, encompassing internal workflows, supply chain digitization, corporate culture, and value creation models.</li>
+        <li><strong>Evolutionary Paradigms (Web 1.0 to Web 3.0):</strong> Trace the development from static information portals (Web 1.0) to interactive user-generated platforms and social networks (Web 2.0), reaching modern decentralized ecosystems and AI-driven platforms (Web 3.0).</li>
+        <li><strong>Milestones in Digitisation:</strong> Distinguish between Digitization (converting physical data to digital format), Digitalization (optimizing existing business processes using tech), and full Digital Transformation (creating digital-first business strategies and models).</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: Evolution & Definition Check</h4>
+      <p>Select the correct evolutionary phase for "Platform and Decentralized/AI Ecosystem Economy":</p>
+      <select id="q1-select">
+        <option value="">-- Select Evolutionary Phase --</option>
+        <option value="1">Web 1.0 (Static & Informational)</option>
+        <option value="2">Web 2.0 (Social & User-Generated)</option>
+        <option value="3">Modern Digital Era / Web 3.0 (Ecosystems & Intelligence)</option>
+      </select>
+      <button onclick="checkQ1()">Submit Assessment</button>
+      <div id="q1-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">2. Differences Between Traditional and Digital Strategies</h2>
+      <span class="time-badge">45 Mins (00:40 - 01:25)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 2.1):</strong>
+      Compare traditional linear value chains with multi-directional digital value networks and evaluate asset scalability across operating models.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Value Chains vs. Digital Value Networks:</strong> Analyze the transition from linear, sequential supply chains (Supplier &rarr; Producer &rarr; Retailer &rarr; Consumer) to interconnected, dynamic digital networks where data flows multi-directionally between all ecosystem partners.</li>
+        <li><strong>Asset Structure & Scalability:</strong> Contrast traditional, asset-heavy infrastructure (physical stores, local inventory) with cloud-driven, lightweight digital operations capable of near-zero marginal cost scalability.</li>
+        <li><strong>Execution Speed & Feedback Loops:</strong> Compare scheduled market launches and traditional customer interaction models against continuous, real-time data feedback loops that power rapid software iterations and hyper-agile execution.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Strategy Conversion Analysis</h4>
+      <p>Identify a traditional linear business process (e.g., periodic physical survey collection) and map out its digital value network counterpart (e.g., real-time omnichannel feedback data pipeline):</p>
+      <textarea id="q2-input" rows="3" placeholder="Describe the traditional process and how it transforms into a digital strategy network..."></textarea>
+      <button onclick="checkQ2()">Submit Strategy Mapping</button>
+      <div id="q2-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="break-card">
+    ☕ Scheduled Break — 15 Minutes (01:25 - 01:40)
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">3. Drivers of Digital Transformation</h2>
+      <span class="time-badge">40 Mins (01:40 - 02:20)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 3.1):</strong>
+      Identify primary technological and market drivers compelling organizations to adapt and transform their business models.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Evolving Consumer Expectations:</strong> Explore how modern consumers demand instant fulfillment, seamless multi-channel/omnichannel experiences, and hyper-personalized engagement across touchpoints.</li>
+        <li><strong>Emerging Enablers:</strong> Evaluate the core technologies driving industry updates, including cloud computing, Artificial Intelligence (AI), Internet of Things (IoT), and big data analytics.</li>
+        <li><strong>Market Disruption & Competitive Pressures:</strong> Study how tech-native startups disrupt traditional industries, forcing legacy organizations to innovate rapidly to protect market share.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: Core Driver Identification</h4>
+      <p>Which driver is primarily responsible for requiring real-time, hyper-personalized consumer touchpoints in a digital business model?</p>
+      <div class="radio-group">
+        <label><input type="radio" name="q3" value="a"> Maintenance of legacy hardware systems</label>
+        <label><input type="radio" name="q3" value="b"> Changing consumer expectations combined with real-time data analytics</label>
+        <label><input type="radio" name="q3" value="c"> Fixed operational cost reductions</label>
+      </div>
+      <button onclick="checkQ3()">Submit Selection</button>
+      <div id="q3-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">4. Strategic Alignment and Organizational Impact</h2>
+      <span class="time-badge">40 Mins (02:20 - 03:00)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 4.1):</strong>
+      Formulate actionable strategies to align technology initiatives with organizational goals and implement change management frameworks.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>IT and Corporate Strategy Integration:</strong> Ensure digital strategies directly mirror and propel overarching business goals, rather than treating technology as an isolated operational utility.</li>
+        <li><strong>Change Management & Workforce Culture:</strong> Address organizational friction, reskill legacy staff, foster cross-functional agile teams, and instill a digital-first continuous learning culture.</li>
+        <li><strong>Measuring Transformation ROI:</strong> Define strategic metrics beyond direct short-term revenue, such as Customer Lifetime Value (CLV), digital adoption speed, organizational agility metrics, and long-term digital ROI.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Organizational Change Scenario</h4>
+      <p>Propose a specific leadership strategy to manage employee resistance during an enterprise-wide transition to a digital workflow model:</p>
+      <textarea id="q4-input" rows="3" placeholder="Outline clear action steps for upskilling, communication, or cultural alignment..."></textarea>
+      <button onclick="checkQ4()">Submit Analysis</button>
+      <div id="q4-feedback" class="feedback"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkQ1() {
+    const val = document.getElementById('q1-select').value;
+    const feedback = document.getElementById('q1-feedback');
+    feedback.style.display = 'block';
+    
+    if (val === "3") {
+      feedback.textContent = "Correct! Web 3.0 and modern digital strategies leverage AI, platform models, and integrated digital ecosystems.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Review the distinction between static sites, social platforms, and modern platform/AI ecosystems.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ2() {
+    const text = document.getElementById('q2-input').value.trim();
+    const feedback = document.getElementById('q2-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Response saved! Your mapping effectively highlights the shift from linear processes to interconnected digital value networks.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please provide a more detailed breakdown (minimum 20 characters) explaining both traditional and digital states.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ3() {
+    const selected = document.querySelector('input[name="q3"]:checked');
+    const feedback = document.getElementById('q3-feedback');
+    feedback.style.display = 'block';
+
+    if (selected && selected.value === 'b') {
+      feedback.textContent = "Correct! Evolving consumer expectations, backed by data analytics, drive dynamic personalization.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Consider which factor focuses explicitly on customer expectations and real-time interaction.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ4() {
+    const text = document.getElementById('q4-input').value.trim();
+    const feedback = document.getElementById('q4-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Analysis recorded. Key solutions often include structured upskilling programs, clear strategic communication, and cross-functional leadership.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please elaborate further on your proposed organizational change strategy (minimum 20 characters).";
+      feedback.className = "feedback incorrect";
+    }
+  }
+</script>
+
+</body>
+</html>
