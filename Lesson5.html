@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LU5: Strategic Technologies and Business Enablement - Courseware</title>
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #2563eb;
+      --accent-color: #0d9488;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+      --outcome-bg: #eff6ff;
+      --outcome-border: #bfdbfe;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .outcomes-overview {
+      background: var(--outcome-bg);
+      border: 1px solid var(--outcome-border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .outcomes-overview h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .outcomes-overview ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .outcomes-overview li {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .topic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .topic-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .topic-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.35rem;
+    }
+
+    .time-badge {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .topic-outcomes {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 4px solid #9333ea;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .topic-outcomes strong {
+      color: #6b21a8;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .content-section {
+      margin-bottom: 20px;
+    }
+
+    .content-section h3 {
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .break-card {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      text-align: center;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .activity-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .activity-box h4 {
+      margin: 0 0 10px 0;
+      color: #0f766e;
+      font-size: 1.1rem;
+    }
+
+    .activity-box p {
+      margin: 0 0 12px 0;
+    }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    select:focus, textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--primary-color);
+    }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: #15803d;
+      border: 1px solid var(--success-border);
+    }
+
+    .feedback.incorrect {
+      background-color: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #f87171;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>LU5: Strategic Technologies and Business Enablement</h1>
+    <div class="meta-info">
+      <span>⏱ Delivery Duration: 3 Hours (180 Mins)</span>
+      <span>☕ Break: 15 Mins</span>
+    </div>
+  </header>
+
+  <div class="outcomes-overview">
+    <h2>🎯 Overall Unit Learning Outcomes</h2>
+    <p style="margin-top: 0; margin-bottom: 12px;">Upon successful completion of this learning unit, learners will be able to:</p>
+    <ul>
+      <li><strong>LO1:</strong> Evaluate foundational enablers—Cloud Computing, Artificial Intelligence (AI), Internet of Things (IoT), and Blockchain—to streamline enterprise operations.</li>
+      <li><strong>LO2:</strong> Synthesize multi-technology architectures that solve real-world operational bottlenecks in logistics, data security, and decision-making.</li>
+      <li><strong>LO3:</strong> Apply Rogers' Diffusion of Innovation framework to analyze technological adoption lifecycles across enterprise user segments.</li>
+      <li><strong>LO4:</strong> Construct robust cybersecurity adoption frameworks that balance risk mitigation, Zero Trust principles, and organizational change dynamics.</li>
+    </ul>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">1. Cloud Computing, AI, IoT, and Blockchain in Operations</h2>
+      <span class="time-badge">85 Mins (00:00 - 01:25)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 1.1):</strong>
+      Assess the operational capabilities of Cloud, AI, IoT, and Blockchain technologies and formulate integrative solutions to optimize enterprise workflows.
+    </div>
+    
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Cloud Computing Enablers:</strong> Evaluating SaaS, PaaS, and IaaS delivery models, elastic scalability, and serverless architectures for business agility.</li>
+        <li><strong>Artificial Intelligence & Machine Learning:</strong> Deploying predictive analytics, natural language processing (NLP), and automated decision engines for process optimization.</li>
+        <li><strong>Internet of Things (IoT):</strong> Implementing real-time asset tracking, predictive maintenance, and edge computing across smart supply chains.</li>
+        <li><strong>Blockchain & Distributed Ledgers:</strong> Establishing immutable ledger records, smart contracts, and transparent cross-border operational trust.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge & Skill Assessment: Strategic Enablers Selection</h4>
+      <p>Which strategic technology combination is best suited for securing immutable audit trails in supply chain logistics while monitoring real-time container conditions in transit?</p>
+      <div class="radio-group">
+        <label><input type="radio" name="q1" value="a"> Cloud Storage and Standalone ERP spreadsheets</label>
+        <label><input type="radio" name="q1" value="b"> IoT Sensors (temperature/location) paired with Blockchain immutable ledgers</label>
+        <label><input type="radio" name="q1" value="c"> Legacy relational databases with manual batch updates</label>
+      </div>
+      <button onclick="checkQ1()">Submit Assessment</button>
+      <div id="q1-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="break-card">
+    ☕ Scheduled Break — 15 Minutes (01:25 - 01:40)
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">2. Cybersecurity Adoption Frameworks (Rogers' Diffusion of Innovation)</h2>
+      <span class="time-badge">80 Mins (01:40 - 03:00)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 2.1):</strong>
+      Apply Rogers' Diffusion of Innovation framework to drive organizational adoption of cybersecurity protocols and Zero Trust security architectures.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Rogers' Diffusion Curve in Security:</strong> Analyzing the 5 adopter segments (Innovators, Early Adopters, Early Majority, Late Majority, Laggards) during enterprise security rollouts.</li>
+        <li><strong>Cybersecurity Framework Integration:</strong> Aligning NIST/ISO security standards with organizational readiness and governance models.</li>
+        <li><strong>Overcoming Adoption Friction:</strong> Managing change resistance to Zero Trust controls (MFA, identity management, data encryption) across reluctant internal groups.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Cybersecurity Diffusion Strategy</h4>
+      <p>Using Rogers' Diffusion model, propose a strategy to transition the "Late Majority" and "Laggard" employee groups toward adopting mandatory Multi-Factor Authentication (MFA):</p>
+      <textarea id="q2-input" rows="3" placeholder="Outline clear steps addressing user friction, training support, peer leadership, or policy incentives..."></textarea>
+      <button onclick="checkQ2()">Submit Strategy</button>
+      <div id="q2-feedback" class="feedback"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkQ1() {
+    const selected = document.querySelector('input[name="q1"]:checked');
+    const feedback = document.getElementById('q1-feedback');
+    feedback.style.display = 'block';
+
+    if (selected && selected.value === 'b') {
+      feedback.textContent = "Correct! IoT provides real-time ambient telemetry while Blockchain delivers tamper-proof audit trails for supply chain verification.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Consider which technologies combine real-time sensor tracking with tamper-proof distributed record keeping.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ2() {
+    const text = document.getElementById('q2-input').value.trim();
+    const feedback = document.getElementById('q2-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Strategy recorded! Driving adoption among Late Majority/Laggards requires reducing complexity, hands-on support, clear risk messaging, and peer champions.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please provide a more detailed strategy (minimum 20 characters) targeting adoption friction in later lifecycle segments.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+</script>
+
+</body>
+</html>
