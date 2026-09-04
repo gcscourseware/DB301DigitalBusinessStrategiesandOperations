@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LU3: Digital Business Models and Ecosystems - Courseware</title>
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #2563eb;
+      --accent-color: #0d9488;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+      --outcome-bg: #eff6ff;
+      --outcome-border: #bfdbfe;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .outcomes-overview {
+      background: var(--outcome-bg);
+      border: 1px solid var(--outcome-border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .outcomes-overview h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .outcomes-overview ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .outcomes-overview li {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .topic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .topic-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .topic-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.35rem;
+    }
+
+    .time-badge {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .topic-outcomes {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 4px solid #9333ea;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .topic-outcomes strong {
+      color: #6b21a8;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .content-section {
+      margin-bottom: 20px;
+    }
+
+    .content-section h3 {
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .break-card {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      text-align: center;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .activity-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .activity-box h4 {
+      margin: 0 0 10px 0;
+      color: #0f766e;
+      font-size: 1.1rem;
+    }
+
+    .activity-box p {
+      margin: 0 0 12px 0;
+    }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    select:focus, textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--primary-color);
+    }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: #15803d;
+      border: 1px solid var(--success-border);
+    }
+
+    .feedback.incorrect {
+      background-color: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #f87171;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>LU3: Digital Business Models and Ecosystems</h1>
+    <div class="meta-info">
+      <span>⏱ Delivery Duration: 3 Hours (180 Mins)</span>
+      <span>☕ Break: 15 Mins</span>
+    </div>
+  </header>
+
+  <div class="outcomes-overview">
+    <h2>🎯 Overall Unit Learning Outcomes</h2>
+    <p style="margin-top: 0; margin-bottom: 12px;">Upon successful completion of this learning unit, learners will be able to:</p>
+    <ul>
+      <li><strong>LO1:</strong> Analyze multi-sided platform architecture and two-sided market dynamics in businesses such as Uber, Airbnb, and Amazon.</li>
+      <li><strong>LO2:</strong> Evaluate recurring revenue structures including SaaS subscription tiers, freemium conversion funnels, and customer retention mechanics.</li>
+      <li><strong>LO3:</strong> Map API-driven partner networks and platform ecosystems that enable cross-industry co-creation of value.</li>
+      <li><strong>LO4:</strong> Compare strategic paths between digital-native startups and legacy enterprises undergoing business model transformation.</li>
+    </ul>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">1. Platform-Based Business Models (e.g., Uber, Airbnb, Amazon)</h2>
+      <span class="time-badge">40 Mins (00:00 - 00:40)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 1.1):</strong>
+      Deconstruct multi-sided platform mechanics, evaluating how network effects, frictionless matching, and dynamic pricing drive scale across global platform leaders.
+    </div>
+    
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Multi-Sided Platform Dynamics:</strong> Facilitating exchange between independent demand-side consumers and supply-side providers without acquiring physical inventory.</li>
+        <li><strong>Direct & Indirect Network Effects:</strong> Analyzing how platform utility increases for users as vendor activity grows (and vice versa), driving rapid scale and winner-take-most markets.</li>
+        <li><strong>Platform Architecture & Monetization:</strong> Evaluating marketplace mechanics including take-rates, transaction fees, third-party seller services, and dynamic surge pricing algorithms.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: Platform Economics</h4>
+      <p>Which mechanism best describes the economic driver where adding more drivers to a ride-hailing app directly decreases rider wait times, thereby attracting more riders?</p>
+      <div class="radio-group">
+        <label><input type="radio" name="q1" value="a"> Linear value chain optimization</label>
+        <label><input type="radio" name="q1" value="b"> Indirect (cross-side) network effect</label>
+        <label><input type="radio" name="q1" value="c"> Fixed-asset cost amortization</label>
+      </div>
+      <button onclick="checkQ1()">Submit Assessment</button>
+      <div id="q1-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">2. Subscription and Freemium Models</h2>
+      <span class="time-badge">45 Mins (00:40 - 01:25)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 2.1):</strong>
+      Formulate monetization and conversion strategies for subscription and freemium models, balancing feature gating, acquisition costs, and lifetime customer value.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Subscription Mechanics:</strong> Structuring recurring revenue streams (SaaS), user tiers, retention loops, and churn reduction strategies.</li>
+        <li><strong>Freemium Conversion Funnels:</strong> Designing value gates (limiting usage, storage, or advanced features) to convert free users into paid subscribers without suppressing acquisition.</li>
+        <li><strong>Financial Metrics & Unit Economics:</strong> Measuring Customer Acquisition Cost (CAC), Lifetime Value (LTV), Monthly Recurring Revenue (MRR), and the LTV:CAC ratio for long-term sustainability.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Freemium Feature Gating Analysis</h4>
+      <p>Propose a feature-gating strategy for a cloud storage startup converting free users into paid enterprise tiers. Detail what feature is restricted and why users will upgrade:</p>
+      <textarea id="q2-input" rows="3" placeholder="Example: Restrict team admin controls and audit logs to paid tiers to compel business team upgrades..."></textarea>
+      <button onclick="checkQ2()">Submit Strategy</button>
+      <div id="q2-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="break-card">
+    ☕ Scheduled Break — 15 Minutes (01:25 - 01:40)
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">3. Partner Networks and Digital Ecosystems</h2>
+      <span class="time-badge">40 Mins (01:40 - 02:20)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 3.1):</strong>
+      Design ecosystem integration strategies using open APIs, developer marketplaces, and strategic digital alliances to expand enterprise reach.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Ecosystem Co-Creation:</strong> Moving beyond linear partnerships to interconnected networks where third-party developers, hardware vendors, and service providers co-create customer value.</li>
+        <li><strong>API Economy & Integration:</strong> Utilizing Application Programming Interfaces (APIs) as strategic assets to embed services into third-party platforms (e.g., embedding payment gateways or logistics tracking).</li>
+        <li><strong>Developer Platforms & Marketplaces:</strong> Building app stores, extension marketplaces, and integration hubs that increase platform lock-in and expand core functionality.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: API & Ecosystem Dynamics</h4>
+      <p>How do open APIs primarily accelerate growth within a digital ecosystem?</p>
+      <select id="q3-select">
+        <option value="">-- Select Primary Benefit --</option>
+        <option value="1">By completely eliminating the need for data privacy controls.</option>
+        <option value="2">By allowing third parties to build complementary services that increase core platform value.</option>
+        <option value="3">By replacing internal cloud infrastructure with external physical databases.</option>
+      </select>
+      <button onclick="checkQ3()">Submit Selection</button>
+      <div id="q3-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">4. Case Studies: Digital-Native vs. Transformed Enterprises</h2>
+      <span class="time-badge">40 Mins (02:20 - 03:00)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 4.1):</strong>
+      Analyze operational and strategic differences between born-digital companies and traditional incumbents undergoing business model pivot strategies.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Digital-Native Advantage:</strong> Examining born-digital structures built on cloud-native infrastructure, agile product development, automated workflows, and data-centric cultures.</li>
+        <li><strong>Transformed Enterprise Journeys:</strong> Analyzing real-world incumbent transformations (e.g., traditional retail to omnichannel marketplace platforms, physical media to digital streaming models).</li>
+        <li><strong>Overcoming Legacy Inertia:</strong> Evaluating strategies for managing technical debt, legacy culture friction, dual-track operations, and strategic pivots during digital adoption.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Transformation Case Analysis</h4>
+      <p>Identify one major obstacle a traditional brick-and-mortar retail brand faces when transitioning to a platform marketplace model, and outline one strategic action to overcome it:</p>
+      <textarea id="q4-input" rows="3" placeholder="Outline the legacy barrier (e.g., channel conflict, supply chain systems) and proposed solution..."></textarea>
+      <button onclick="checkQ4()">Submit Case Analysis</button>
+      <div id="q4-feedback" class="feedback"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkQ1() {
+    const selected = document.querySelector('input[name="q1"]:checked');
+    const feedback = document.getElementById('q1-feedback');
+    feedback.style.display = 'block';
+
+    if (selected && selected.value === 'b') {
+      feedback.textContent = "Correct! Indirect (cross-side) network effects occur when growth on one side of the platform directly enhances value for the other side.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Consider how interaction between two distinct user groups (drivers and riders) enhances ecosystem value.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ2() {
+    const text = document.getElementById('q2-input').value.trim();
+    const feedback = document.getElementById('q2-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Strategy recorded! Effective freemium models gate high-value professional or admin features while keeping core features open for user acquisition.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please provide a more detailed gating strategy (minimum 20 characters) identifying the feature and upgrade trigger.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ3() {
+    const val = document.getElementById('q3-select').value;
+    const feedback = document.getElementById('q3-feedback');
+    feedback.style.display = 'block';
+    
+    if (val === "2") {
+      feedback.textContent = "Correct! APIs allow external developers to integrate with and build on top of your platform, expanding its value ecosystem.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Focus on how open integrations allow external partners to create value around a core product.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ4() {
+    const text = document.getElementById('q4-input').value.trim();
+    const feedback = document.getElementById('q4-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Analysis saved! Successful incumbent transformations require addressing channel conflicts, legacy tech debt, and culture alignment.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please elaborate further on your proposed transformation strategy (minimum 20 characters).";
+      feedback.className = "feedback incorrect";
+    }
+  }
+</script>
+
+</body>
+</html>
