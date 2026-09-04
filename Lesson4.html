@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LU4: Operations Management in a Digital World - Courseware</title>
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --secondary-color: #2563eb;
+      --accent-color: #0d9488;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+      --outcome-bg: #eff6ff;
+      --outcome-border: #bfdbfe;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 32px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0 0 12px 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+
+    .outcomes-overview {
+      background: var(--outcome-bg);
+      border: 1px solid var(--outcome-border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .outcomes-overview h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .outcomes-overview ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .outcomes-overview li {
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .topic-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .topic-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .topic-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1.35rem;
+    }
+
+    .time-badge {
+      background: var(--secondary-color);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .topic-outcomes {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-left: 4px solid #9333ea;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .topic-outcomes strong {
+      color: #6b21a8;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .content-section {
+      margin-bottom: 20px;
+    }
+
+    .content-section h3 {
+      font-size: 1.05rem;
+      color: var(--secondary-color);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      margin: 0 0 16px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .break-card {
+      background: #f1f5f9;
+      border: 2px dashed #cbd5e1;
+      text-align: center;
+      padding: 16px;
+      margin-bottom: 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .activity-box {
+      background: #f0fdfa;
+      border: 1px solid #99f6e4;
+      border-left: 5px solid var(--accent-color);
+      padding: 20px;
+      margin-top: 24px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .activity-box h4 {
+      margin: 0 0 10px 0;
+      color: #0f766e;
+      font-size: 1.1rem;
+    }
+
+    .activity-box p {
+      margin: 0 0 12px 0;
+    }
+
+    select, textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    select:focus, textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--primary-color);
+    }
+
+    .feedback {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: none;
+      font-size: 0.95rem;
+    }
+
+    .feedback.correct {
+      background-color: var(--success-bg);
+      color: #15803d;
+      border: 1px solid var(--success-border);
+    }
+
+    .feedback.incorrect {
+      background-color: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #f87171;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>LU4: Operations Management in a Digital World</h1>
+    <div class="meta-info">
+      <span>⏱ Delivery Duration: 3 Hours (180 Mins)</span>
+      <span>☕ Break: 15 Mins</span>
+    </div>
+  </header>
+
+  <div class="outcomes-overview">
+    <h2>🎯 Overall Unit Learning Outcomes</h2>
+    <p style="margin-top: 0; margin-bottom: 12px;">Upon successful completion of this learning unit, learners will be able to:</p>
+    <ul>
+      <li><strong>LO1:</strong> Apply Agile and Lean operational principles to eliminate process waste and increase organizational responsiveness.</li>
+      <li><strong>LO2:</strong> Evaluate end-to-end digital supply chains, Robotic Process Automation (RPA), and real-time inventory systems.</li>
+      <li><strong>LO3:</strong> Map customer journeys and apply service design methodologies to optimize digital touchpoints and user experience.</li>
+      <li><strong>LO4:</strong> Establish operational KPIs and digital dashboard metrics to evaluate process performance and operational efficiency.</li>
+    </ul>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">1. Agile and Lean Operations</h2>
+      <span class="time-badge">40 Mins (00:00 - 00:40)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 1.1):</strong>
+      Implement Lean waste-elimination techniques and Agile iteration frameworks to increase operational speed and continuous improvement.
+    </div>
+    
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Agile Execution Frameworks:</strong> Applying Scrum and Kanban methodologies to cross-functional operational teams, iterative sprint planning, and backlog prioritization.</li>
+        <li><strong>Lean Principles in Digital Operations:</strong> Identifying and eliminating digital waste (over-processing data, idle waiting times, feature bloat, and manual handoffs).</li>
+        <li><strong>Continuous Improvement (Kaizen):</strong> Leveraging real-time data feeds and fast feedback loops to make continuous, incremental operational improvements.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: Agile & Lean Management</h4>
+      <p>Which operational tool focuses on visualizing workflow, limiting Work-In-Progress (WIP), and identifying operational bottlenecks?</p>
+      <div class="radio-group">
+        <label><input type="radio" name="q1" value="a"> Linear Gantt Chart</label>
+        <label><input type="radio" name="q1" value="b"> Kanban Board</label>
+        <label><input type="radio" name="q1" value="c"> Annual Strategic Balance Sheet</label>
+      </div>
+      <button onclick="checkQ1()">Submit Assessment</button>
+      <div id="q1-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">2. Digital Supply Chain and Automation</h2>
+      <span class="time-badge">45 Mins (00:40 - 01:25)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 2.1):</strong>
+      Assess intelligent automation tools, IoT tracking systems, and automated fulfillment workflows to build resilient digital supply chains.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Supply Chain Digitization & Visibility:</strong> Integrating Internet of Things (IoT) sensors, RFID, and predictive analytics for end-to-end supply chain tracking.</li>
+        <li><strong>Robotic Process Automation (RPA):</strong> Automating repetitive, rule-based back-office tasks (order processing, inventory reconciliation, invoice matching).</li>
+        <li><strong>Smart Logistics & Predictive Demand:</strong> Utilizing machine learning algorithms for automated replenishment, route optimization, and demand forecasting.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: Automation Opportunity Identification</h4>
+      <p>Identify one repetitive, manual operational task in supply chain management and describe how Robotic Process Automation (RPA) can optimize it:</p>
+      <textarea id="q2-input" rows="3" placeholder="Example: Manual invoice matching can be automated using RPA scripts to extract data and update ERP records automatically..."></textarea>
+      <button onclick="checkQ2()">Submit Strategy</button>
+      <div id="q2-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="break-card">
+    ☕ Scheduled Break — 15 Minutes (01:25 - 01:40)
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">3. Customer Journey and Service Design</h2>
+      <span class="time-badge">40 Mins (01:40 - 02:20)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 3.1):</strong>
+      Map end-to-end customer journeys and design digital service blueprints that align front-stage interactions with back-stage operational processes.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Customer Journey Mapping:</strong> Analyzing user touchpoints, emotional highs/lows, friction points, and omni-channel service transitions.</li>
+        <li><strong>Service Blueprinting:</strong> Connecting front-stage customer interactions directly with back-stage operational systems, staff actions, and support processes.</li>
+        <li><strong>User-Centric Service Design:</strong> Applying Design Thinking principles (Empathize, Define, Ideate, Prototype, Test) to streamline digital service delivery.</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Knowledge Assessment: Service Blueprint Components</h4>
+      <p>In a Service Blueprint, what separates "front-stage" user-visible activities from "back-stage" operational support processes?</p>
+      <select id="q3-select">
+        <option value="">-- Select Boundary Line --</option>
+        <option value="1">The Line of Visibility</option>
+        <option value="2">The Supply Chain Boundary</option>
+        <option value="3">The Financial Margin Horizon</option>
+      </select>
+      <button onclick="checkQ3()">Submit Selection</button>
+      <div id="q3-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-header">
+      <h2 class="topic-title">4. Operational KPIs and Performance Measurement</h2>
+      <span class="time-badge">40 Mins (02:20 - 03:00)</span>
+    </div>
+
+    <div class="topic-outcomes">
+      <strong>Topic Learning Outcome (TLO 4.1):</strong>
+      Formulate data-driven operational KPIs and build performance dashboards to measure efficiency, lead times, and digital service quality.
+    </div>
+
+    <div class="content-section">
+      <h3>Detailed Curriculum Outline</h3>
+      <ul>
+        <li><strong>Digital Operational Metrics:</strong> Tracking key metrics including Order Fulfillment Lead Time, First-Contact Resolution (FCR), System Uptime/SLA compliance, and Throughput.</li>
+        <li><strong>Real-Time Analytics & Dashboards:</strong> Designing operational control panels using real-time telemetry to detect process bottlenecks instantly.</li>
+        <li><strong>Balancing Efficiency and Quality:</strong> Balancing cost-reduction KPIs with customer satisfaction metrics (CSAT, Net Promoter Score, Customer Effort Score).</li>
+      </ul>
+    </div>
+
+    <div class="activity-box">
+      <h4>Skill Assessment: KPI Framework Design</h4>
+      <p>Propose two specific operational KPIs for an e-commerce platform—one measuring process speed/efficiency and one measuring customer service quality:</p>
+      <textarea id="q4-input" rows="3" placeholder="Example: Speed = Order Lead Time (Click to Dispatch) / Quality = First-Time Right Fulfillment Rate..."></textarea>
+      <button onclick="checkQ4()">Submit KPI Framework</button>
+      <div id="q4-feedback" class="feedback"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function checkQ1() {
+    const selected = document.querySelector('input[name="q1"]:checked');
+    const feedback = document.getElementById('q1-feedback');
+    feedback.style.display = 'block';
+
+    if (selected && selected.value === 'b') {
+      feedback.textContent = "Correct! A Kanban board visualizes work items, limits Work-In-Progress (WIP), and exposes operational bottlenecks.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Consider which visual tool limits Work-In-Progress (WIP) in Agile and Lean execution.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ2() {
+    const text = document.getElementById('q2-input').value.trim();
+    const feedback = document.getElementById('q2-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Strategy recorded! RPA excels at automating rule-based, repetitive tasks across legacy and digital enterprise systems.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please provide a more detailed answer (minimum 20 characters) detailing both the manual task and the RPA automation process.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ3() {
+    const val = document.getElementById('q3-select').value;
+    const feedback = document.getElementById('q3-feedback');
+    feedback.style.display = 'block';
+    
+    if (val === "1") {
+      feedback.textContent = "Correct! The Line of Visibility separates customer-facing (front-stage) interactions from internal (back-stage) operations.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Incorrect. Review service blueprint terminology regarding customer-visible versus hidden operational layers.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+
+  function checkQ4() {
+    const text = document.getElementById('q4-input').value.trim();
+    const feedback = document.getElementById('q4-feedback');
+    feedback.style.display = 'block';
+
+    if (text.length >= 20) {
+      feedback.textContent = "Framework saved! Balancing efficiency metrics (speed, throughput) with quality metrics ensures sustainable operational excellence.";
+      feedback.className = "feedback correct";
+    } else {
+      feedback.textContent = "Please elaborate further on your proposed KPIs (minimum 20 characters) covering both efficiency and quality.";
+      feedback.className = "feedback incorrect";
+    }
+  }
+</script>
+
+</body>
+</html>
